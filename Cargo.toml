@@ -1,0 +1,9 @@
+[package]
+name = "egui_isohedral"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.31.0"
+egui_colors = "0.8.0"
+rand = "0.8.5"
