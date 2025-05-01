@@ -2,12 +2,12 @@
 
 ![example_image](media/egui_isohedral.png)
 
-Botched demo of [isohedral](https://isohedral.ca/software/tactile/)
+Demo of [isohedral](https://isohedral.ca/software/tactile/)
 to showcase my crate [egui_colors](https://crates.io/crates/egui_colors).
 
 This is not a library.
 
-Unfortunately egui doesn't draw concave polygons so the implementation is limited. 
+The drawing of concave polygons is supported by the crate [Lyon](https://crates.io/crates/lyon). 
 
 ## Credit
 
