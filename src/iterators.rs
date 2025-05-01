@@ -49,7 +49,7 @@ pub struct TilingShapeIterator<'tiling> {
     pub(crate) tiling: &'tiling IsohedralTiling,
 }
 
-impl<'tiling> Iterator for TilingShapeIterator<'tiling> {
+impl Iterator for TilingShapeIterator<'_> {
     type Item = Shape;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -78,7 +78,7 @@ pub struct TilingShapePartIterator<'tiling> {
     pub(crate) tiling: &'tiling IsohedralTiling,
 }
 
-impl<'tiling> Iterator for TilingShapePartIterator<'tiling> {
+impl Iterator for TilingShapePartIterator<'_> {
     type Item = Shape;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -157,7 +157,7 @@ pub struct FillRegionIterator<'tiling> {
     asp: usize,
 }
 
-impl<'tiling> Debug for FillRegionIterator<'tiling> {
+impl Debug for FillRegionIterator<'_> {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         if self.done {
             f.write_str("[done]")
@@ -174,7 +174,7 @@ impl<'tiling> Debug for FillRegionIterator<'tiling> {
     }
 }
 
-impl<'tiling> Iterator for FillRegionIterator<'tiling> {
+impl Iterator for FillRegionIterator<'_> {
     type Item = FillRegionStep;
 
     fn next(&mut self) -> Option<Self::Item> {
@@ -359,7 +359,7 @@ impl<'tiling> FillAlgorithm<'tiling> {
     }
 }
 
-impl<'algo, 'tiling> IntoIterator for &'algo FillAlgorithm<'tiling> {
+impl<'algo> IntoIterator for &'algo FillAlgorithm<'_> {
     type Item = FillRegionStep;
 
     type IntoIter = FillRegionIterator<'algo>;

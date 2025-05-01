@@ -23,7 +23,7 @@ fn create_path(points: &[Point]) -> Path {
 
 
 fn tesselate_polygon(points: &[Point]) -> VertexBuffers<Point, u16> {
-    let path = create_path(&points);
+    let path = create_path(points);
 
     let mut tessellator = FillTessellator::new();
     let mut geometry = VertexBuffers::new();
@@ -40,7 +40,7 @@ fn tesselate_polygon(points: &[Point]) -> VertexBuffers<Point, u16> {
 }
 
 fn tesselate_stroke(points: &[Point], width: f32) -> VertexBuffers<Point, u16> {
-    let path = create_path(&points);
+    let path = create_path(points);
 
     let mut tessellator = StrokeTessellator::new();
     let mut geometry = VertexBuffers::new();
@@ -78,7 +78,7 @@ fn draw_isohedrals(app: &mut App, ctx: &egui::Context) {
         let c = colors[app.tiling.colour(tile.t1, tile.t2, tile.aspect)];
         let mut points = vec![];
 
-        app.tiling.shapes().into_iter().for_each(|e| {
+        app.tiling.shapes().for_each(|e| {
             let edge = &app.edges_shapes[e.id()];
             let transform = tile.transform * e.transform();
             let p1 = transform.transform_point2(edge[0]);
@@ -86,7 +86,7 @@ fn draw_isohedrals(app: &mut App, ctx: &egui::Context) {
             let point1 = Point::new(p1.x * 100., p1.y * 100.);
             let point2 = Point::new(p2.x * 100., p2.y * 100.);
 
-            if points.len() < 1 {
+            if points.is_empty() {
                 points.push(point1)
             }
             if e.reversed() {
