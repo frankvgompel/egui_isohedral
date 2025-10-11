@@ -69,7 +69,7 @@ fn to_egui_mesh(geometry: VertexBuffers<Point, u16>, color: Color32) -> Mesh {
 
 fn draw_isohedrals(app: &mut App, ctx: &egui::Context) {
     let tokens = app.colorix.animator.animated_tokens;
-    let rect = ctx.screen_rect();
+    let rect = ctx.content_rect();
     let layer_id = egui::LayerId::background();
     let painter = egui::Painter::new(ctx.clone(), layer_id, rect);
     let colors = [tokens.active_ui_element_background(), tokens.solid_backgrounds(), tokens.hovered_ui_element_border()];

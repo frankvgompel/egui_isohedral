@@ -163,6 +163,7 @@ impl IsohedralTiling {
     /// # Iterators
 
     /// Iterate over all the edge shapes of the prototile.
+    #[allow(mismatched_lifetime_syntaxes)]
     pub fn shapes(&self) -> TilingShapeIterator {
         TilingShapeIterator {
             idx: 0,
@@ -171,6 +172,7 @@ impl IsohedralTiling {
     }
 
     /// Iterate over all the shape parts of the prototile.
+    #[allow(mismatched_lifetime_syntaxes)]
     pub fn parts(&self) -> TilingShapePartIterator {
         TilingShapePartIterator {
             idx: 0,

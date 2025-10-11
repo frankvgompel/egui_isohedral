@@ -1,10 +1,10 @@
 [package]
 name = "egui_isohedral"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 
 [dependencies]
-eframe = "0.31"
-egui_colors = "0.8.0"
+eframe = "0.33"
+egui_colors = "0.10.0"
 rand = "0.8.5"
 lyon = "1.0.1"
